@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Students;
 use Illuminate\Http\Request;
+use App\Http\Requests\StudentRequest;
 
 class StudentsController extends Controller
 {
@@ -24,7 +25,7 @@ class StudentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
         $student = Students::create($request->all());
         return $student;
